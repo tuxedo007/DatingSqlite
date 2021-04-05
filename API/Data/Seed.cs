@@ -33,7 +33,6 @@ namespace API.Data
             
             foreach (var user in users)
             {
-              // gf PhotoManagementChallenge
               user.Photos.First().IsApproved = true;
               user.UserName = user.UserName.ToLower();
               await userManager.CreateAsync(user, "Pa$$w0rd");

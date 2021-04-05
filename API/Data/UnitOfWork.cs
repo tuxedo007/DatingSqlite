@@ -16,7 +16,6 @@ namespace API.Data
 
         public IUserRepository UserRepository => new UserRepository(_context, _mapper);
 
-        // gf PhotoManagementChallenge
          public IPhotoRepository PhotoRepository => new PhotoRepository(_context);
 
         public IMessageRepository MessageRepository => new MessageRepository(_context, _mapper);

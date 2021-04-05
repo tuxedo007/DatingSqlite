@@ -19,7 +19,6 @@ namespace API.Data
 
         public DbSet<UserLike> Likes { get; set; }
         public DbSet<Message> Messages { get; set; }
-        // gf PhotoManagementChallenge
         public DbSet<Photo> Photos { get; set; }
         public DbSet<Group> Groups { get; set; }
         public DbSet<Connection> Connections { get; set; }
@@ -27,7 +26,6 @@ namespace API.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            // gf PhotoManagementChallenge
             // builder.Entity<Group>()
             //     .HasMany(x => x.Connections)
             //     .WithOne()
@@ -71,7 +69,6 @@ namespace API.Data
                 .WithMany(m => m.MessagesSent)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // gf PhotoManagementChallenge
             builder.Entity<Photo>().HasQueryFilter(p => p.IsApproved);
 
             builder.ApplyUtcDateTimeConverter();

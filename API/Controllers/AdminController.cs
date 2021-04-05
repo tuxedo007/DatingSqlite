@@ -12,9 +12,6 @@ namespace API.Controllers
     public class AdminController : BaseApiController
     {
         private readonly UserManager<AppUser> _userManager;
-
-        // gf PhotoManagementChallenge
-        // public AdminController(UserManager<AppUser> userManager)
         private readonly IUnitOfWork _unitOfWork;
         private readonly IPhotoService _photoService;
         public AdminController(UserManager<AppUser> userManager, IUnitOfWork unitOfWork, 
@@ -67,10 +64,8 @@ namespace API.Controllers
             return Ok(await _userManager.GetRolesAsync(user));
         }
 
-        // gf PhotoManagementChallenge
         [Authorize(Policy = "ModeratePhotoRole")]
         [HttpGet("photos-to-moderate")]
-        // public ActionResult GetPhotosForModeration()
         public async Task<ActionResult> GetPhotosForModeration()
         {
             // return Ok("Admins or moderators can see this");
@@ -124,6 +119,6 @@ namespace API.Controllers
 
             return Ok();
         }
-                
+
     }
 }

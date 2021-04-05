@@ -1,4 +1,3 @@
-// gf PhotoManagementChallenge
 namespace API.DTOs
 {
   public class PhotoForApprovalDto {

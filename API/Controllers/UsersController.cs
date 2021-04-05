@@ -47,7 +47,6 @@ namespace API.Controllers
             return Ok(users);
         }
 
-        // gf PhotoManagementChallenge
         [HttpGet("{username}", Name = "GetUser")]
         public async Task<ActionResult<MemberDto>> GetUser(string username)
         {
@@ -87,12 +86,6 @@ namespace API.Controllers
                 Url = result.SecureUrl.AbsoluteUri,
                 PublicId = result.PublicId
             };
-
-            // gf PhotoManagementChallenge
-            // if (user.Photos.Count == 0)
-            // {
-            //     photo.IsMain = true;
-            // }
 
             user.Photos.Add(photo);
 
